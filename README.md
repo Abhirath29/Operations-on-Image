@@ -1,4 +1,5 @@
-# face_detection_app
+# operations on Image app
++ includes face detection eyes detection photo modifying 
 + Streamlit App with OpenCV
 
 ### How to Deploy on Heroku
@@ -10,18 +11,6 @@
 + setup.sh
 + requirements.txt or pipfile
 
-### Requirements For OpenCV
-+ Buildpack
- - To check if you have the buildpack installed you can use
-```bash
-heroku run bash
-apt --help
-```
- - If it shows the help, that means you have the buildpack for apt installed
- - If you do not have it you can use this command to install the buildpack
- ```bash
- heroku buildpacks:add --index 1 https://github.com/heroku/heroku-buildpack-apt
- ```
 
 + Aptfile
 - You can then include a file called Aptfile which contains the basic dependences/copy and paste into Aptfile
@@ -31,19 +20,8 @@ libxrender1
 libfontconfig1
 libice6
 ```
-+ NB: This is the same as installing with apt on a paid account
-```bash
-apt-get install libsm6 libxrender1 libfontconfig1 libice6
-```
-
-#### Deploying
-+ Then just like before you run after adding to your repo you can push to heroku to deploy by
-```bash
-git push heroku master
-```
-
 
 #### By
-+ Jesus Saves @JCharisTech
-+ Jesse E.Agbe(JCharis)
++ Abhirath Kapoor
++ akapoor_be18@thapar.edu
 
