@@ -19,9 +19,9 @@ def load_image(img):
 	return im
 
 
-face_cascade = cv2.CascadeClassifier('frecog/haarcascade_frontalface_default.xml')
-eye_cascade = cv2.CascadeClassifier('frecog/haarcascade_eye.xml')
-smile_cascade = cv2.CascadeClassifier('frecog/haarcascade_smile.xml')
+face_cascade = cv2.CascadeClassifier('xmldoc_fcog/haarcascade_frontalface_default.xml')
+eye_cascade = cv2.CascadeClassifier('xmldoc_fcog/frecog/haarcascade_eye.xml')
+smile_cascade = cv2.CascadeClassifier('xmldoc_fcog/haarcascade_smile.xml')
 
 def detect_faces(our_image):
 	new_img = np.array(our_image.convert('RGB'))
@@ -127,7 +127,7 @@ def main():
 				st.image(our_image,width=300)
 
 
-		task = ["Faces","Smiles","Eyes","Cannize","Cartonize"]
+		task = ["Faces","Eyes","Cannize","Cartonize"]
 		feature_choice = st.sidebar.selectbox("Find Features",task)
 		if st.button("Process"):
 
@@ -136,10 +136,7 @@ def main():
 				st.image(result_img)
 
 				st.success("Found {} faces".format(len(result_faces)))
-			elif feature_choice == 'Smiles':
-				result_img = detect_smiles(our_image)
-				st.image(result_img)
-
+			
 
 			elif feature_choice == 'Eyes':
 				result_img = detect_eyes(our_image)
